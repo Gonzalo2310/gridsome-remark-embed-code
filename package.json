@@ -1,0 +1,33 @@
+{
+  "name": "gridsome-remark-embed-code",
+  "version": "1.0.0",
+  "description": "Gridsome markdown remark transformer plugin to embed the contents total or partial of specified files as code snippets.",
+  "main": "index.js",
+  "keywords": [
+    "gridsome",
+    "remark",
+    "transformer",
+    "plugin",
+    "code",
+    "snippets"
+  ],
+  "author": "Infogon",
+  "license": "MIT",
+  "dependencies": {
+    "normalize-path": "^3.0.0",
+    "unist-util-visit": "^2.0.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "devDependencies": {
+    "jest": "^26.1.0",
+    "remark": "13.0.0"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}
