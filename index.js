@@ -11,7 +11,7 @@
 const fs = require(`fs`)
 const path = require(`path`)
 const visit = require('unist-util-visit')
-//const normalize = require('normalize-path')
+
 
 let localOptions = {}
 const EXT_TO_LANG_MAP = {
