@@ -44,8 +44,11 @@ transformers: {
 ```
 #### Basic operation:
 Structure of example folders.
+
 ![image example](images/plugin-gridsome-code-draw.png)
+
 Using this example structure the code added in our markdown would be:
+
 ```
 embed: ./snippets/jquery-vue1/jQueryInputSimple.html#input
 ```
@@ -53,6 +56,7 @@ embed: ./snippets/jquery-vue1/jQueryInputSimple.html#input
 Embed is the keyword to indicate that content will be embedded. 
 Then you write the path and the name of the file.
 `#input` is a reference to a piece of code marked in the file: 
+
 ```html
   <!-- gridsome_start: input -->
   <input type="text" class="form-control" id="exampleInput" aria-describedby="inputHelp">
@@ -131,12 +135,12 @@ Both **key** and **symbol** allow you to configure the characters to be used.  I
 The default configuration is: 
 ```javascript
 [
-            gridsome-remark-embed-code',
-            {
-                separator: 'symbol',
-                separatorSymbol: '#'.
-            }
-         ],
+  gridsome-remark-embed-code',
+   {
+     separator: 'symbol',
+     separatorSymbol: '#'.
+   }
+],
 ```
 ***<u>No corrections are made for possible conflicts with alphanumeric characters or possible characters used in paths and file names. Using such characters would break the function. We recommend common sense.</u>***
 One parameter that is not used within the markdown but affects it directly is 

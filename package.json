@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "Gridsome markdown remark transformer plugin to embed the contents total or partial of specified files as code snippets.",
   "main": "index.js",
+  "homepage": "https://github.com/Gonzalo2310/gridsome-remark-embed-code/tree/master",
+  "repository": "https://github.com/Gonzalo2310/gridsome-remark-embed-code/tree/master/#readme",
   "keywords": [
     "gridsome",
     "remark",
