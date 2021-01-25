@@ -143,7 +143,9 @@ The default configuration is:
 ],
 ```
 ***<u>No corrections are made for possible conflicts with alphanumeric characters or possible characters used in paths and file names. Using such characters would break the function. We recommend common sense.</u>***
+
 One parameter that is not used within the markdown but affects it directly is 
+
 * **directory: string** => The default directory where to start looking for the file with the snippets. The file can be relative by putting the point before the first bar, or absolute to the site by ignoring that detail. By default there is no directory defined.
 Inside the file that contains the snippets we talk before the following format: 
 ```html
@@ -161,7 +163,7 @@ transformers: {
   remark: {
    ...
     plugins: [
-        gridsome-remark-embed-code',
+        'gridsome-remark-embed-code',
         ....
         '@gridsome/remark-prismjs',
       ....
