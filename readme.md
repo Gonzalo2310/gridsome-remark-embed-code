@@ -1,13 +1,13 @@
 # gridsome-remark-embed-code
 ### plugin for Gridsome that allows the integration of code from external files into markdown documents.
 #### The problem
-* Markdown (grisome-remark) perfectly renders the code that needed to be rendered. Nevertheless: 
-  * You need to put the code contained in the markdown which could lead to semantic or tabulation errors that are easier to control with an ide and the source code.
+* Markdown (grisome-remark) perfectly renders the code that needs to be rendered. Nevertheless: 
+  * You need to put the code contained in the markdown which could lead to semantic or tabulation errors that are easier to control with an IDE and the source code.
   * It is tedious to repeat that content, which does not change, to make a web of several languages.
 * The existing plugin [gridsome-remark-embed-snippet](https://github.com/mrinalini-m/gridsome-remark-embed-snippet):
   * asks for a file per code to be included. I have articles with a lot of integrated code which would require me to create many reference files
-  * Takes the language of the file extension. If I created a complete file of html + css + js for complete examples the language not associated with the extension (css, js) would be difficult to distinguish
-  * Despite these details it is the code that was taken as a basis for the creation of this plugin. From here thanks to its creator.
+  * Takes the language of the file extension. If I created a complete file of html + css + js for complete examples the language not associated with the extension (css, js) would be difficult to be distinguished.
+  * Despite these facts, it is the code that was taken as a base for the creation of this plugin (thanks to its creator).
 ### The proposed solution:
 * A plugin capable of obtaining the code from a file and display it in the markdown.
   * The beginning and end of the code is marked in the file. 
@@ -17,7 +17,7 @@
     * Nesting is allowed. Nested marks will be skipped when requesting parent marks.
     * Several formats are allowed
     * The language can be selected for a correct renderization.
-  * You can configure a default directory. You can use an absolute path or a relative path.
+  * You can configure a default directory. You can use an absolute or relative path.
     * Even if the default path exists, you can reference a path (from that path or in an absolute way) to the destination file
 ### Installation
 **Careful!:** This plugin depends on the [@gridsome/transformer-remark](https://github.com/gridsome/gridsome/tree/master/packages/transformer-remark) plugin.
@@ -26,8 +26,8 @@ npm install gridsome-remark-embed-code
 yarn add gridsome-remark-embed-code
 ```
 #### Basic configuration.
-The plugin must be **before** the **@gridsome/remark-prismjs** plugin in the **gridsome.config.js** configuration to work properly.
-This is because the primjs will transpose the markdown code to html and then the markups necessary for the plugin to work will be lost.
+The plugin must be put **before** the **@gridsome/remark-prismjs** plugin in the **gridsome.config.js** configuration to work properly.
+This is because primjs will transpose the markdown code to html and then the markups necessary for the plugin to work will be lost.
 Example:
 ```javascript
 transformers: {
@@ -47,13 +47,13 @@ Structure of example folders.
 
 ![image example](images/plugin-gridsome-code-draw.png)
 
-Using this example structure the code added in our markdown would be:
+Using above example structure, the code added in our markdown would be:
 
 ```
 embed: ./snippets/jquery-vue1/jQueryInputSimple.html#input
 ```
 #### Explanation:
-Embed is the keyword to indicate that content will be embedded. 
+`Embed` is the keyword to indicate that content will be embedded. 
 Then you write the path and the name of the file.
 `#input` is a reference to a piece of code marked in the file: 
 
@@ -91,7 +91,7 @@ transformers: {
 #### Parameters used in the markdown:
 * **embed**: Is the keyword to indicate the use of the plugin. It is configurable as follows:
 __embedKey: string__ // where string is any valid word. This means that you should not use spaces.
-Visual example (in order not to be repetitive in the following parameters we will skip the visual example)
+Visual example (we will skip visual example, in order to not be repetitive)
 ```javascript
 transformers: {
   remark: {
@@ -110,11 +110,11 @@ transformers: {
   }
 }
 ```
-This setting would change the code previously shown in the following way;
+This setting would change the code previously shown in the following way:
 ```
 `myembed: ./snippets/jquery-vue1/jQueryInputSimple.html#input`
 ```
-* **Lang: string** // The language to use. It is recommended to follow the list below: [highlight.js](https://github.com/highl)
+* **Lang: string** // The language to be used. It is recommended to follow the list below: [highlight.js](https://github.com/highl)
   Example:
   **Lang: html**
 ```
@@ -142,7 +142,7 @@ The default configuration is:
    }
 ],
 ```
-***<u>No corrections are made for possible conflicts with alphanumeric characters or possible characters used in paths and file names. Using such characters would break the function. We recommend common sense.</u>***
+***<u>No corrections are made becuse of possible conflicts with alphanumeric characters or possible characters used in paths and file names. Using such characters would break the function. We recommend common sense.</u>***
 
 One parameter that is not used within the markdown but affects it directly is 
 
@@ -208,9 +208,9 @@ gridsome_end: namesnippet
 code
 // /* <!-- gridsome_end: namesnippet --> */
 ```
-The marks must be in a line that does not contain code since the plugin removes the entire line of the mark and the nested snippets if any.
-The main idea is to preserve the integrity of the whole file with the code without having to cut out parts of it for a long article or series of articles.
-We have tried to give free way to the spacing to avoid a too demanding format.  The following forms are equally valid:
+The marks must be in a line that does not contain code since the plugin removes the entire line of the mark and the nested snippets, if any.
+The main idea is to preserve the integrity of the whole code within the file, without having to cut out parts of it for a long article or series of articles.
+We have tried to give free way to the spacing to avoid an opinionated format.  The following examples are equally valid:
 ```
 `embed: ./snippets/jquery-vue1/jQueryInputSimple.html #input Lang: html`
 ```
@@ -224,4 +224,4 @@ We have tried to give free way to the spacing to avoid a too demanding format.  
 ![rendering image](images/render.png)
 The image is blank, which is automatically deleted. The start and end marks, the nested marks and the space to the right before the first character of the first line keeping the tabs.
 ### Collaboration.
-Problems, comments, improvements, adaptations, etc. is open through the issues. PR will be welcome with appropriate commentary and/or documentation.
+Problems, comments, improvements, adaptations, etc. are open through the issues. PR will be welcome with appropriate commentary and/or documentation.
